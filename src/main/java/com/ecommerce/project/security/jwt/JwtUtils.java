@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
@@ -34,9 +33,10 @@ public class JwtUtils {
     public String getJwtFromCookies(HttpServletRequest request) {
         Cookie cookie = WebUtils.getCookie(request, jwtCookie);
         if (cookie != null) {
-            // System.out.println("COOKIE: " + cookie.getValue());
+             System.out.println("COOKIE: " + cookie.getValue());
             return cookie.getValue();
         } else {
+            System.out.println("COOKIE: null");
             return null;
         }
     }
@@ -47,6 +47,7 @@ public class JwtUtils {
                 .path("/api")
                 .maxAge(24 * 60 * 60)
                 .httpOnly(false)
+                .secure(false)
                 .build();
         return cookie;
     }
