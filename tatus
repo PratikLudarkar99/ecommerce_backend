@@ -1,0 +1,13 @@
+[1mdiff --git a/src/main/java/com/ecommerce/project/security/WebSecurityConfig.java b/src/main/java/com/ecommerce/project/security/WebSecurityConfig.java[m
+[1mindex 9573d37..5fa8740 100644[m
+[1m--- a/src/main/java/com/ecommerce/project/security/WebSecurityConfig.java[m
+[1m+++ b/src/main/java/com/ecommerce/project/security/WebSecurityConfig.java[m
+[36m@@ -82,7 +82,7 @@[m [mpublic class WebSecurityConfig {[m
+                                 .requestMatchers("/v3/api-docs/**").permitAll()[m
+                                 .requestMatchers("/h2-console/**").permitAll()[m
+ //                                .requestMatchers("/api/admin/**").permitAll()[m
+[31m-                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Allow OPTIONS[m
+[32m+[m[32m//                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Allow OPTIONS[m
+                                 .requestMatchers("/api/public/**").permitAll()[m
+                                 .requestMatchers("/swagger-ui/**").permitAll()[m
+                                 .requestMatchers("/api/test/**").permitAll()[m
